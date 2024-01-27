@@ -5,7 +5,7 @@
     "description": "API to save numbers/emails for the contacts like an online agenda",
     "version": "1.0.0"
   },
-  "host": "cse341-server-9xcw.onrender.com",
+  "host": "https://crud-agenda-2hjq.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
