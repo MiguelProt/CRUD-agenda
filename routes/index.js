@@ -5,11 +5,11 @@ const swaggerDocument = require('../swagger.json');
 
 
 routes.get('/', (req, res) => {
-    // #swagger.tags = ['Hello World']
-    res.send('Hello World');
+    // #swagger.tags = ['Welcome message']
+    res.send('Welcome to AGENDA API');
 });
-routes.use('/users', require('./contacts'))
-routes.use('/professional', require('./professionals'))
+routes.use('/contacts', require('./contacts'))
+//calling the swagger routes here swagger don't generate the routes api-docs
 routes.use('/api-docs', swaggerUI.serve)
 routes.use('/api-docs', swaggerUI.setup(swaggerDocument));
 

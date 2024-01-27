@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 8080;
-const dotenv = require('dotenv');
 const mongodb = require('./db/connections');
+const dotenv = require('dotenv');
 dotenv.config();
+
+const port = process.env.PORT || 8080;
 
 // Convert a request (POST,GET) to JSON Object
 app.use(bodyParser.json());

@@ -4,8 +4,8 @@ const host = 'cse341-server-9xcw.onrender.com';
 
 const doc = {
     info: {
-        title: 'Contact API',
-        description: 'This API will contain all the progress of the course.'
+        title: 'AGENDA API',
+        description: 'API to save numbers/emails for the contacts like an online agenda'
     },
     host: host,
     schemes: ['https', 'http']
