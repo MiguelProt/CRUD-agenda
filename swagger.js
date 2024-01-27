@@ -1,5 +1,5 @@
 const swaggerAutogen = require('swagger-autogen')();
-const host = 'https://crud-agenda-2hjq.onrender.com';
+const host = 'crud-agenda-2hjq.onrender.com';
 // const host = 'localhost:8080';
 
 const doc = {
