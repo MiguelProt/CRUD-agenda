@@ -2,6 +2,7 @@ const express = require('express');
 const contacts = require('../controllers/contacts');
 const routes = express.Router();
 const { check } = require('express-validator');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 routes.get('/', contacts.getContact);
 routes.get('/:id', contacts.getContact);
@@ -18,7 +19,7 @@ routes.post('/',[
     check('phone')
         .matches(/^\+(?:[0-9] ?){6,14}[0-9]$/).
         withMessage('Please insert a valid phone number for example +529984834032')
-],contacts.createContact);
+], isAuthenticated, contacts.createContact);
 routes.put('/:id', [
     check('name')
         .isString()
@@ -32,7 +33,7 @@ routes.put('/:id', [
     check('phone')
         .matches(/^\+(?:[0-9] ?){6,14}[0-9]$/).
         withMessage('Please insert a valid phone number for example +529984834032')
-], contacts.updateContact);
-routes.delete('/:id', contacts.deleteContact);
+], isAuthenticated, contacts.updateContact);
+routes.delete('/:id', isAuthenticated, contacts.deleteContact);
 
 module.exports = routes;

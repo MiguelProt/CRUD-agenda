@@ -1,4 +1,4 @@
-@baseUrl = https://https://crud-agenda-2hjq.onrender.com
+@baseUrl = https://crud-agenda-2hjq.onrender.com
 ### render request links
 ### Gets all contacts
 GET {{baseUrl}}/contacts HTTP/1.1
