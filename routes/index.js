@@ -9,16 +9,18 @@ routes.get('/', (req, res) => {
 });
 routes.use('/contacts', require('./contacts'))
 routes.get('/login', passport.authenticate('github'), (req, res) => {
-    //  #swagger.tags = ['Authentication'] = {
-    // #swagger.description = 'The authentication use github validation that response to the callback url, in this case /github/callback'
+    //  #swagger.tags = ['Authentication'] 
+    // #swagger.description = 'The authentication use github validation that response to the callback url, in this case /github/callback, for this reason this endpoint doesn\'t have a response.'
     /*  #swagger.responses[200] = {
-       description: 'OK',
+       description: 'OK, Github will response to /github/callback with success and the neccesary data',
     }
-    #swagger.responses[404] = {
-        description: 'FAILED',
+    #swagger.responses[] = {
+        description: 'If failed, then response to the same endpoint and this endpoint will receive the status, 400, 500, etc.',
     } */
 });
 routes.get('/logout', function (req, res, next) {
+    //  #swagger.tags = ['Authentication'] 
+    // #swagger.description = 'This endpoint destroy the session if the user is logged in'
     req.logout(function(err) {
         if(err) { return next(err); }
         res.redirect('/');

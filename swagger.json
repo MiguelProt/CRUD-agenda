@@ -8,8 +8,8 @@
   "host": "crud-agenda-2hjq.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
@@ -27,20 +27,23 @@
         "tags": [
           "Authentication"
         ],
-        "description": "The authentication use github validation that response to the callback url, in this case /github/callback",
+        "description": "The authentication use github validation that response to the callback url, in this case /github/callback, for this reason this endpoint doesn\\'t have a response.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK, Github will response to /github/callback with success and the neccesary data"
           },
-          "404": {
-            "description": "FAILED"
+          "": {
+            "description": "If failed, then response to the same endpoint and this endpoint will receive the status, 400, 500, etc."
           }
         }
       }
     },
     "/logout": {
       "get": {
-        "description": "",
+        "tags": [
+          "Authentication"
+        ],
+        "description": "This endpoint destroy the session if the user is logged in",
         "responses": {
           "default": {
             "description": ""

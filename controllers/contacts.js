@@ -20,7 +20,6 @@ const getContact = async (req, res) => {
             // console.log(await mongodb.getDatabase().db().listCollections().toArray());
             result = await mongodb.getDatabase().db().collection(collection).find();
             result.toArray().then((Contacts) => {
-                console.log(Contacts);
                 res.setHeader(`Content-Type`, `application/json`)
                 res.status(200).send(Contacts)
             });
